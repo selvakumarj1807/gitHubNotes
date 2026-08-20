@@ -1,29 +1,85 @@
-Step01 - Create Git Repository in GitHub
-----------------------------------------
+Git Hub For Multiple User(Branches)
+###################################
 
-Step02 - CMD
-------------
+------------------------------------------------------------------------------------------------------------
 
-git remote add origin https://github.com/infinite-techies/angular-project.git
 
-Step03 - Add Branch in GitHub(base-code, dev)
----------------------------------------------
+1. Check Node.js
+----------------
+Open CMD / Terminal:
+--------------------
 
-Step04 - check current branch in your project - CMD
----------------------------------------------------
+node -v
+npm -v
 
-git branch
+2. Create React Project
+-----------------------
 
-git pull
+npm create vite@latest my-react-app
 
-git branch
+Select:
+-------
 
-Step05 - change branch - master to base-code - CMD
---------------------------------------------------
+Project name: my-react-app
+Framework: React
+Variant: JavaScript
+
+Or use the direct command:
+--------------------------
+
+npm create vite@latest my-react-app -- --template react
+
+3. Go inside the project
+------------------------
+
+cd my-react-app
+
+4. Install dependencies
+-----------------------
+
+npm install
+
+5. Start the development server
+-------------------------------
+
+npm run dev
+
+------------------------------------------------------------------------------------------------------------
+
+Step 01
+-------
+
+Create Repository in your Git Hub with ReadMe, Public
+
+Step 02
+-------
+
+Open Your Vs Code with Project Folder & Open Git Bash(or Termminal)
+------------------------------------------------------------------- 
+
+git remote add origin https://github.com/selvakumarj1807/multipleUser.git
+
+Open your Git Hub via chrome & Create Branches
+----------------------------------------------
+
+dev & base code
+
+Show all local branches
+-----------------------
+
+git branch  
+
+Show all remote branches
+------------------------
+
+git branch -r 
+
+Show both local + remote branches
+---------------------------------
+
+git branch -a
 
 git branch -M base-code
-
-git branch
 
 git add .
 
@@ -31,46 +87,53 @@ git commit -m "Initial Commit"
 
 git push origin base-code -f
 
-Step06 - pull request base-code to dev branch in GitHub
--------------------------------------------------------
+If Have a error like cannot change Git Hub Another Login Then Follow Below step
+-------------------------------------------------------------------------------
 
-refresh the page and change or check the branches.
+Sign Out & Sign In Your Git Hub Account
 
-Contribute --> click Open pull reguest
+git config --global user.name "Your Name"
 
-select one branch to another branch(Change main to dev Only)
+git config --global user.email "you@example.com"
 
+git remote -v
 
-Step07 - CMD
-------------
+git config --global user.name
+
+git config --global user.email
+
+git branch
+
+git push -u origin base-code -f
+
+Then Check Your Git Hub Repository (base-code)
+
+Step 03
+-------
+
+Make Pull Request for base-code to dev branches via Git Hub use Chrome
+----------------------------------------------------------------------
+
+Contribute --> Open Pull Request -- dev to base-code --> Then have There isn’t anything to compare.
+dev and base-code are entirely different commit histories.
 
 git pull origin dev
 
+Then have fate error its Okay.
+
 git pull origin dev --allow-unrelated-histories
 
-Step08 -- Create common commit for dev branch in VS Code
---------------------------------------------------------
+Then have a error - CONFLICT (add/add): Merge conflict in README.md. Then Open VS Code Source Control --> Accept Current Changes & Merge Changes(Click +) & Publish or Commit Changes
 
-click gitRepositry --> Merge Changes Click + Symbol --> Publish Branch
+git commit -m "Merge Conflict Resolve"
 
-Step09 - Merge
---------------
+git push -u origin base-code
 
-git commit -m "Merge Conflict Resolved"
+Then Go to Your Repository via Git Hub use Chrome 
+-------------------------------------------------
 
-git push origin base-code
+Contribute --> Open Pull Request -- dev to base-code --> Create Pull Request --> Merge Pull Request --> Confirm Merge
 
-Step10 - Now Step06 can pull request base-code to dev branch in GitHub
-----------------------------------------------------------------------
+Then Refresh your Branches
 
-Contribute --> click Open pull reguest
 
-select one branch to another branch(Change main to dev Only)
-
-Add Description
-
-click the --> create pull request
-
-(Merge base-code to dev)
-
-click the --> Merge pull request --> Confirm
